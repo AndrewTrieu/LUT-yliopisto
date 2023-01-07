@@ -1,0 +1,11 @@
+<!doctype html>
+<html>
+<head>
+    <title>HW5 instructions: Roles and functions</title>
+    <meta charset="utf-8">
+    
+</head>
+<body>
+a) Create the following roles: <strong>user</strong>, <strong>manager</strong>, <strong>owner</strong>. Grant all privileges to owner, read privileges to user, and insert privileges to manager.<p>b) Create a new role: <strong>trainee</strong>. Grant privileges only to columns <strong><em>orderdate</em></strong> and <strong><em>shippeddate</em> </strong>to <strong>trainee </strong>and set the role valid until 30.5.2022.<br>c) Create a function <strong>get_shipping_info(varchar)</strong> that returns a table. The table should have the following columns <em><strong>shipname</strong></em>, <em><strong>shipaddress</strong></em>, <em><strong>shipcity</strong></em>, <span><strong style="font-style: italic;">shipcountry. </strong><span style="">The function should return orders where the shipname matches the given string.<br>d) Extend the function in c)<strong>&nbsp;</strong>so that it accepts three parameters:&nbsp;<strong>get_shipping_info(varchar, timestamp, money). </strong>The function should return orders where the shipname matches the given string, orderdate is equal or earlier than the given timestamp and finally, freight cost is +-10€ from the given money.</span></span></p>
+</body>
+</html>

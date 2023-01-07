@@ -1,0 +1,11 @@
+<!doctype html>
+<html>
+<head>
+    <title>HW2 instructions: Partitions</title>
+    <meta charset="utf-8">
+    
+</head>
+<body>
+<p dir="ltr"><span class="" style="background-color: rgb(239, 69, 64); color: rgb(255, 255, 255);">NOTE! </span><strong><span>Remember to empty your table / partitions when adding constraints. So in short, create the partitions and constraints before inserting data.<br>Additional tips &amp; tricks: <br>- You may have to create a default partition for part d)<br>- pgAdmin may fail all inserts in case of an error, you can use SQL Shell to circumvent this problem.</span></strong></p><p dir="ltr">a) Partition the Orders table using orderdate with the following constraints:<br>&nbsp; 1. Orders between: 20060703 00:00:00.000 and 20070205 00:00:00.000<br>&nbsp; 2. Orders between: 20070205 00:00:00.000 and 20070819 00:00:00.000<br>&nbsp; 3. Orders between: 20070819 00:00:00.000 and 20080123 00:00:00.000<br>&nbsp; 4. Orders between: 20080123 00:00:00.000 and 20080507 00:00:00.000</p><p dir="ltr">b) Alter the third partition and add a contraint where the freight cost is higher than 50 €<br>c) Alter the fourth partition and add a constraint that the shipped date should not be null<br>d) Create two partitions of the first partition (so a partition of partitions) using shipcountry so that:<br>&nbsp; 1. Orders shipped to USA and UK are in one<br>&nbsp; 2. Orders shipped to Germany and Finland are in another</p><p dir="ltr">e) How many rows are in each partition?</p><p dir="ltr">Use the HW2.sql given in Moodle for creating (and inserting) data.</p><p dir="ltr"><span class="" style="background-color: rgb(239, 69, 64); color: rgb(255, 255, 255);">Submit your SQL statements (and answer for the question in e) in one SQL file to Moodle. In e), specify each partition and the amount of rows they have.</span></p><p dir="ltr"><br></p>
+</body>
+</html>

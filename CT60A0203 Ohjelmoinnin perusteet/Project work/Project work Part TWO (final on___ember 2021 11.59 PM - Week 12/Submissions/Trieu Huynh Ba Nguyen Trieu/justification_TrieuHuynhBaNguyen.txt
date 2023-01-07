@@ -1,0 +1,11 @@
+The program has been implemented with a randomly generated unique Receipt ID associated with rental details of each vehicle. This is to prevent the miscalculation of rental charges when the same vehicle is rented more than once. For example, vehicle ADH-402 was rented 2 times in October and November, and without the Recipt ID, the details are added to rentVehicle.txt as follows:
+
+ADH-402,060598-2144,20/10/2021 13:02,33098.0,0
+ADH-402,140498-1242,28/11/2021 12:52,34525.0,0
+
+The program picks the vehicle based on its Vehicle ID, which can be duplicated in rentVehicle.txt. When the renter returns the vehicle that was rented on 28/11/2021, the program may read the data based on from 20/10/2021, resulting in incorrect charges.
+
+The unique Receipt ID prevents this problem by ensuring each rental details are distinct from each other:
+
+u0AmvNZv0f,ADH-402,060598-2144,20/10/2021 13:02,33098.0,0
+c6AlovwPDn,ADH-402,140498-1242,28/11/2021 12:52,34525.0,0

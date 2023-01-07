@@ -1,0 +1,54 @@
+CREATE DATABASE Project;
+CREATE TABLE "Customer" (
+	"CustomerID"	INTEGER NOT NULL,
+	"Name"	TEXT,
+	"Age"	INTEGER,
+	PRIMARY KEY("CustomerID")
+);
+CREATE TABLE "Address" (
+	"AddressID"	INTEGER NOT NULL,
+	"CustomerID"	INTEGER NOT NULL,
+	"Street"	TEXT,
+	"Number"	INTEGER,
+	"PostalCode"	INTEGER,
+	"Region"	TEXT,
+	"CountryID"	INTEGER NOT NULL,
+	CONSTRAINT FK_CustomerID
+	FOREIGN KEY("CustomerID") REFERENCES "Customer"("CustomerID")
+		ON DELETE CASCADE,
+	CONSTRAINT FK_CountryID
+	FOREIGN KEY("CountryID") REFERENCES "Country"("CountryID")
+		ON DELETE CASCADE,
+	PRIMARY KEY("AddressID")
+);
+CREATE TABLE "Country" (
+	"CountryID"	INTEGER NOT NULL,
+	"Country"	TEXT,
+	PRIMARY KEY("CountryID")
+);
+CREATE TABLE "Contact" (
+	"ContactID"	INTEGER NOT NULL,
+	"CustomerID"	INTEGER NOT NULL,
+	"Phone"	TEXT,
+	"Mail"	TEXT,
+	PRIMARY KEY("ContactID"),
+	CONSTRAINT FK_CustomerID
+	FOREIGN KEY("CustomerID") REFERENCES "Customer"("CustomerID")
+		ON DELETE CASCADE
+);
+CREATE TABLE "Shipment" (
+	"CustomerID"	INTEGER NOT NULL,
+	"ItemID" INTEGER NOT NULL,
+	"Date"	TEXT,
+	CONSTRAINT FK_ItemID
+	FOREIGN KEY("ItemID") REFERENCES "Item"("ItemID")
+		ON DELETE CASCADE,
+	CONSTRAINT FK_CustomerID
+	FOREIGN KEY("CustomerID") REFERENCES "Customer"("CustomerID")
+		ON DELETE CASCADE
+);
+CREATE TABLE "Item" (
+	"ItemID"	INTEGER NOT NULL,
+	"Name"	TEXT,
+	PRIMARY KEY("ItemID")
+);

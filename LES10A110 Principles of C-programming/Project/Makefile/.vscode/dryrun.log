@@ -1,0 +1,7 @@
+C:\msys64\mingw64\bin\make.exe --dry-run --always-make --keep-going --print-directory
+make: Entering directory 'c:/Users/Dell/OneDrive - LUT University/LUT-yliopisto/Jouni J�rvinen - Principles of C-programming/Project/Makefile'
+gcc -c Main.c 
+gcc -c Library.c 
+gcc Library.o Main.o -o project 
+make: Leaving directory 'c:/Users/Dell/OneDrive - LUT University/LUT-yliopisto/Jouni J�rvinen - Principles of C-programming/Project/Makefile'
+ 

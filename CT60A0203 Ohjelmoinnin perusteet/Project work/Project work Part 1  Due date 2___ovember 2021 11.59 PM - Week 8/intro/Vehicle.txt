@@ -1,0 +1,5 @@
+XJY-604,Hyundai Getz,O,0,45.00,A
+AJB-123,BMW mini,P,200,65.00,A
+WYN-482,Ford Fiesta,O,0,40,A
+BKV-943,Ford Ikon,P,150,60,A
+JMB-535,Ford Flex,O,0,50,A

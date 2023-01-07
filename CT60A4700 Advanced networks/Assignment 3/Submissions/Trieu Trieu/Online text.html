@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+    <title>Online text</title>
+    <meta charset="utf-8">
+    
+</head>
+<body>
+<p dir="ltr" style="text-align:left;"></p><p lang="en-in" xml:lang="en-in">
+1.</p>
+<p lang="en-in" align="justify" xml:lang="en-in">
+In networking, a socket is an endpoint for communication between two
+devices. To open a socket, we would use the socket() system call in
+our network application. This system call takes a number of
+parameters that specify the address family, socket type, and protocol
+to be used for the socket. Once the socket has been created, we can
+use the bind() system call to associate the socket with a specific
+network address, and then use the listen() system call to listen for
+incoming connections on the socket.</p>
+<p lang="en-in" align="justify" xml:lang="en-in">
+In addition to the socket(), bind(), and listen() system calls
+mentioned earlier, there is also the accept() system call. This
+system call is used to accept incoming connections on a socket. When
+a client connects to the socket, the accept() call will return a new
+socket descriptor that is connected to the client. This new socket
+can be used to communicate with the client, while the original socket
+continues to listen for new connections.</p>
+<p lang="en-in" align="justify" xml:lang="en-in">
+To close a socket, we would use the close() system call. This will
+release the resources associated with the socket and close the
+connection. We can also use the shutdown() system call to close the
+connection in a more graceful manner, allowing any pending data to be
+sent and acknowledged before the connection is closed.</p>
+<p lang="en-in" align="justify" xml:lang="en-in">
+<span style="text-align:left;">2.</span><br></p>
+<p lang="en-in" align="justify" xml:lang="en-in">
+An input and output stream is a way to read and write data to a
+socket in a network application. To create an input and output
+stream, we would first need to open a socket using the socket()
+system call, as described earlier. Once the socket is open, we can
+use the getInputStream() and getOutputStream() methods on the socket
+object to create the input and output streams.</p>
+<p lang="en-in" align="justify" xml:lang="en-in">
+3.</p>
+<p lang="en-in" align="justify" xml:lang="en-in">
+The accept() system call is used by a server to accept incoming
+connections from clients. When a client connects to the server, the
+accept() call will block until a connection is made. Once a
+connection is established, accept() will return a new socket
+descriptor that is connected to the client. This new socket can be
+used to communicate with the client, while the original socket
+continues to listen for new connections.</p><br><p></p>
+</body>
+</html>

@@ -1,0 +1,10 @@
+{
+  "C_Cpp.errorSquiggles": "Enabled",
+  "files.associations": {
+    "*.rmd": "markdown",
+    "stdio.h": "c",
+    "string.h": "c",
+    "stdlib.h": "c",
+    "io.h": "c"
+  }
+}

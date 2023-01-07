@@ -1,0 +1,21 @@
+import random
+play = "y"
+options = ['Scissor', 'Rock', 'Paper']
+winnerOptions = ["It's a Draw", "#You Won#", "#Computer Won#"]
+while (play.lower() != "no"):
+    yourVote = int(input("\nEnter 0-Scissor, 1-rock or 2-paper:"))
+    compVote = random.randint(0, 2)
+    result = yourVote-compVote
+    if result != 0:
+        if (result == 1):
+            pass
+        elif (result == -1):
+            result = 2
+        elif (result == 2):
+            pass
+        else:
+            result = 1
+    print(f'The computer is {options[compVote]} You are {options[yourVote]} {winnerOptions[result]}')
+    play = str(input("\nDo you want to Play again (type no to exit)?:"))
+print("\nThanks for playing with me")
+

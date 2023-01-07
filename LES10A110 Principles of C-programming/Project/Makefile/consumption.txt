@@ -1,0 +1,4 @@
+Statistics on 8784 measurements:
+Consumption totaled 80884331022 kWh, and averaged 9208143.3 kWh.
+The highest consumption, 12718885 kWh, occurred on 28.2.2020 8:00.
+The lowest consumption, 5620157 kWh, occurred on 20.6.2020 3:00.

@@ -1,0 +1,4 @@
+x <- seq(30, 35, by = .1)
+y <- dnorm(x, mean = 30, sd = 4)
+png(file = "dnorm.png")
+plot(x, y)

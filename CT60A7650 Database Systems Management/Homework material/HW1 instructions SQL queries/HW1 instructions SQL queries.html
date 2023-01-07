@@ -1,0 +1,11 @@
+<!doctype html>
+<html>
+<head>
+    <title>HW1 instructions: SQL queries</title>
+    <meta charset="utf-8">
+    
+</head>
+<body>
+<p dir="ltr" style="text-align: left;"></p><p dir="ltr">Use the HW1.sql file given for the table creation and data insertion.<br>Create the SELECT queries that produce the followg results:</p><p dir="ltr">a) For each customer: articles that the customer bought at the same day of month for two consecutive months, e.g. 16.7.2019 and 16.6.2019.<br>b) For each customer: timeslot in which the customer has been active,i.e. number of days between the first and the last purchases<br>c) All purchases of customers in February and March of leap years<br>d) Get pairs of customers - each with more than a singleton purchase - that have overlapping active purchase periods. <br>For example, Customer_1 buys something on 10.1.2019 and 10.3.2019. Customer_2 buys something on 20.1.2019 and 21.1.2019, now they have overlapping purchase periods.<br>e) All purchases of the last Fridays of a month.</p><p dir="ltr">Each is 2 %, equals to 10 %<br></p><p dir="ltr"><span class="" style="background-color: rgb(239, 69, 64); color: rgb(255, 255, 255);">Submit your queries in one SQL file to Moodle. Do not submit the output, only the queries you have created.</span></p><p dir="ltr"><br></p><p dir="ltr">Table structure (you can find the SQL file in the homework section):<br>CREATE TABLE purchases (<br>&nbsp; id SERIAL,<br>&nbsp; n varchar(255) NOT NULL,<br>&nbsp; d DATE default NULL,<br>&nbsp; i varchar(50) NOT NULL,<br>&nbsp; PRIMARY KEY (id)<br>);<br></p><p dir="ltr"><br></p><p dir="ltr"><br></p><p></p>
+</body>
+</html>

@@ -1,0 +1,11 @@
+Ali:56
+Wali:28a
+Ram:16
+Vijay:56
+Abdur:26
+Chen:18.02
+Wang:
+Joy:21
+Fatimah:22
+Anita:abc
+Fritz:"

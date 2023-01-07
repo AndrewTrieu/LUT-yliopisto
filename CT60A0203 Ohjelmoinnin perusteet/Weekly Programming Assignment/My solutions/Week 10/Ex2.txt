@@ -1,0 +1,20 @@
+import matplotlib.pyplot as plt
+
+
+def cityPopulationChart(txt):
+    dct = {}
+    with open(txt, 'r') as f:
+        con = f.readlines()
+        for i in con:
+            i = i.split(',')
+            i = [x.replace('\n', '') for x in i]
+            dct[i[0]] = int(i[1])
+    years = dct.keys()
+    pop = dct.values()
+    plt.plot(years, pop)
+    plt.xlabel('Years')
+    plt.ylabel('Population')
+    plt.show()
+
+
+cityPopulationChart('citypopulation.txt')
