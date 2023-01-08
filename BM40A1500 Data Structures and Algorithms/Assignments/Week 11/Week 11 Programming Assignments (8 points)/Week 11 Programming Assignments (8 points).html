@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+<head>
+    <title>Week 11 Programming Assignments (8 points)</title>
+    <meta charset="utf-8">
+    
+</head>
+<body>
+<div>
+    <p><strong style="color: rgb(0, 0, 0); font-size: 18px;">Assignment 11.1: Traveling salesman problem and branch-and-bound</strong><span style="color: rgb(0, 0, 0); font-size: 18px;">&nbsp;(4 points)</span><br></p>
+</div>
+<div>In traveling salesman problem, the task is to find the shortest possible route that visits each city exactly once and returns to the origin city. The problem is known to be NP-hard. See <a href="https://moodle.lut.fi/mod/page/view.php?id=699882">Sec. 11.4.4 of the background material</a> for the introduction to the problem.&nbsp;</div>
+<div><br></div>
+<div>No efficient (polynomial time) algorithm is known for the problem. With a small amount of cities we can test all the possible permutations using backtracking and select the shortest route. However, the computation time quickly becomes unbearable when the amount of cities increases. Using <a href="https://moodle.lut.fi/mod/page/view.php?id=698497" target="_blank">branch-and-bound</a> we can reduce the computation time remarkably by reducing the number of solutions to be investigated. This approach still always produce the optimal solution, but can be used with a larger number of cities than the simple backtracking.&nbsp;</div>
+<div></div><br>
+<div>Create a Python function <strong>salesman(city_map: list)</strong>&nbsp;that solves the traveling salesman problem using branch-and-bound algorithm. The function takes a distance matrix (city_map[i][j] tells the distance between \(i\)th and \(j\)th city) of the cities as an input value and returns a order of the cities traversed in a list.
+Cities are labeled as integers starting from zero and the traverse always starts from the first city (\(0\)th city).</div>
+<br><strong>Target:</strong> <br>
+<ul>
+    <li>The function finds the optimal route with 10 cities in 2 seconds on CodeGrade (2 points)</li>
+    <li>The function finds the optimal route with 10 cities in 0.5 seconds on CodeGrade (4 points)</li>
+</ul>
+<div>Note, that testing all permutations with simple backtracking is too slow. In order the achieve either of the targets, the function needs to use branch-and-bound. To obtain 4 points, a more accurate estimate for the lower bound is needed.</div>
+<div><br></div>
+<div>A code template with an example program:</div><br>
+<div style="border:2px solid black">
+    <pre>def salesman(city_map):
+    # TODO
+    
+
+if __name__ == "__main__":
+    
+    cost = 0
+
+    city_map = [
+    #     0   1   2   3   4
+        [ 0, 12, 19, 16, 29],   # 0
+        [12,  0, 27, 25,  5],   # 1
+        [19, 27,  0,  8,  4],   # 2
+        [16, 25,  8,  0, 14],   # 3
+        [29,  5,  4, 14,  0]    # 4
+        ]
+
+    path = salesman(city_map)
+    for i in range(len(city_map)):
+        cost += city_map[path[i]][path[i+1]]
+    
+    print(path)     # [0, 1, 4, 2, 3, 0]
+    print(cost)     # 45
+</pre>
+</div>
+<p></p>
+<div>Submit your solution in CodeGrade as <strong>salesman.py</strong>.</div>
+<br>
+<br>
+
+
+<div>
+    <h4><strong>Assignment 11.2: The bin packing problem and approximation algorithms</strong>&nbsp;(4 points)</h4>
+</div>
+<div>When the size of the problem increases even the more sophisticated exact algorithms (e.g. branch-and-bound and dynamic programming) become insufficient. In such cases, we typically need to settle for approximation algorithms. Such algorithms do not (always) provide the optimal solutions, but usually provide a good solution fast.</div>
+<div><br></div>
+<div>
+    <div><strong>Bin packing problem:</strong> given a set of \(n\) items with sizes \([s_1, s_2, s_3, … , s_n]\), find a way to pack the items to bins with size \(S\) so that the total amount of bins is minimized.</div>
+    <div><br></div>
+    <div>Design and implement an approximation algorithm for the bin packing problem. The algorithm must be able to find a solution for very large set of items. Therefore, brute-force approach or other algorithms that always find the optimal solution are not suitable. You will get points based on how close the solutions your algorithm produces are to the optimal solutions.&nbsp;</div>
+    <div><br></div>
+    <div>Create a function <strong>binpack(items: list, S: int)</strong> in Python. The function takes list of items and a maximum bin size \(S\) as an input value and returns a list of all bins. Each bin is a list of items.</div>
+    <div><br></div>
+    <div><strong>Target:&nbsp;</strong></div>
+    <div>
+        <ul>
+            <li>the algorithm is able to find an (approximate) solution in less than \(1\) seconds when \(n \leq 1000\), and<br></li>
+            <li>the solution (number of bins) is at most 50% larger than the optimal amount of bins (1 point)<br></li>
+            <li>the solution (number of bins)&nbsp;is at most 5% larger than the optimal amount of bins (2 points)<br></li>
+            <li>the solution (number of bins)&nbsp;is at most 1% larger than the optimal amount of bins (4 points)</li>
+        </ul>
+    </div>
+    <div>Note that to get the points, you do not need to find a solution that has a theoretical worst case of 1% larger than the optimum. It is enough that you obtain good enough solution for the cases that are used in CodeGrade. Even quite simple solutions produce almost always much better solution than the theoretical worst case.</div>
+    <div><br></div>
+    <div></div>A code template with an example program:<br><br>
+    <div style="border:2px solid black">
+        <pre>def binpack(items, S):
+    # TODO
+    
+ 
+if __name__ == "__main__":
+
+    items = [9, 3, 3, 6, 10, 4, 6, 8, 6, 3]
+    B = 10
+
+    bins = binpack(items, B)
+
+    for i in range(len(bins)):
+        print(f"bin {i+1}: {bins[i]}")
+
+# A possible output:
+#   bin 1: [9]
+#   bin 2: [3, 3, 4]
+#   bin 3: [6, 3]
+#   bin 4: [10]
+#   bin 5: [6]
+#   bin 6: [8]
+#   bin 7: [6]
+</pre>
+    </div>
+    <br>
+    <div>Submit your solution in CodeGrade as <strong>binpack.py</strong>.</div>
+    <br>
+</div>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+<head>
+    <title>Week 9 Programming Assignments (8 points)</title>
+    <meta charset="utf-8">
+    
+</head>
+<body>
+<div>
+    <h4><span>Assignment 9.1: Creating a Graph</span> <span style="font-weight: normal;">(4 points)</span><br></h4>
+</div>
+<div><span class="" style="color: rgb(239, 69, 64);"></span>Your task is to create a class <strong>Graph</strong> in python which stores a weighted directed or undirected graph structure. The initializer method takes a \(V \times V\) weighted adjacency matrix as an input value (\(V\) sized list of \(V\) sized lists).
+    The class must have following methods:</div>
+<ul>
+    <ul>
+        <li><strong>df_print(start: int)</strong>: prints out the graph in depth-first order from the start vertex (vertex numbers separated by space).</li>
+        <li><strong>bf_print(start: int)</strong>: prints out the graph in breadth-first order from the start vertex.</li>
+        <li><strong>weight(vertex1: int, vertex2: int)</strong>: returns the weight from vertex1 to vertex2, returns -1 if there is no edge between the vertices.</li>
+    </ul>
+</ul>
+<div>where start vertex is labeled between \(0\ ...\ V-1\).</div>
+<p></p>
+<div>Feel free to store the graph structure to your class as you wish as long as the given functions above work as intended. You can use the adjacency matrix
+    or create a adjacency list to keep track of neighbors of each vertex (or even both).</div>
+<div><br>
+</div>
+<div><strong><span class="" style="background-color: rgb(255, 255, 255); color: rgb(239, 69, 64);">Note: </span></strong><span class="" style="background-color: rgb(255, 255, 255); color: rgb(239, 69, 64);">This graph class will be used in following assignments related to graphs so it is recommended to complete this assignment before moving to others.</span></div>
+<p></p>
+<div><span>A code template with an example program </span>for the directed graph below:</div>
+<p></p>
+<!-- Add other path in Moodle! -->&nbsp;<img src="data/examplegraph.png?time=1657884314459" alt="Example Graph" class="img-responsive atto_image_button_text-bottom" width="306" height="239">
+<p></p>
+<div style="border:2px solid black">
+<pre>class Graph:
+    # TODO
+
+
+if __name__ == "__main__":
+
+    matrix = [
+    #    0  1  2  3  4  5
+        [0, 0, 7, 0, 9, 0], # 0
+        [0, 0, 0, 0, 0, 0], # 1
+        [0, 5, 0, 1, 0, 2], # 2
+        [6, 0, 0, 0, 0, 2], # 3
+        [0, 0, 0, 0, 0, 1], # 4
+        [0, 6, 0, 0, 0, 0]  # 5   
+    ]
+    
+    graph = Graph(matrix)
+
+    graph.df_print(0)           # 0 2 1 3 5 4 
+    graph.bf_print(0)           # 0 2 4 1 3 5 
+    print(graph.weight(0, 2))   # 7
+    print(graph.weight(3, 4))   # -1
+</pre>
+</div>
+<p></p>
+<div>Submit your solution in CodeGrade as <strong>graph.py</strong>.</div>
+<br>
+<br>
+
+
+<div>
+    <h4><span><span>Assignment 9.2: Dijkstra's Algoritmh</span></span> <span style="font-weight: normal;">(4 points)</span><br></h4>
+</div>
+<div>With Dijkstra's algorithm we not only get the shortest paths from the start vertex to other vertices but we can build a new
+    graph with only the arcs that constructs those paths.</div>
+<br>
+<div>Create a function <strong>dijkstragraph(graph: Graph, start: int)</strong> that takes a Graph object and the start vertex as an input value. The function
+    returns a new Graph object that has only the arcs that constructs the shortest paths computed by Dijkstra's algorithm. The new graph will be directed despite
+    whether the original graph was directed or undirected.</div>
+<br>
+<div>For example the on the left we have the original directed graph and on the right we have a graph that the function produces, starting from vertex \(0\).</div>
+<br>
+<p>&nbsp;<img src="data/dijkstra.png?time=1657884289742" alt="Example Graph" class="img-responsive atto_image_button_text-bottom" width="776" height="240">
+</p><br>
+<div><span>A code template with an example program </span>for the graph:</div>
+<br>
+<div style="border:2px solid black">
+<pre>from graph import Graph
+
+
+def dijkstragraph(graph, start):
+    # TODO
+
+
+if __name__ == "__main__":
+
+    matrix = [
+        [0, 25,  6,  0,  0,  0,  0,  0,  0,  0],
+        [0,  0,  0, 10,  3,  0,  0,  0,  0,  0],
+        [0,  0,  0,  7,  0, 25,  0,  0,  0,  0],
+        [0,  0,  0,  0, 12, 15,  4, 15, 20,  0],
+        [0,  0,  0,  0,  0,  0,  0,  2,  0,  0],
+        [0,  0,  0,  0,  0,  0,  0,  0,  2,  0],
+        [0,  0,  0,  0,  0,  0,  0,  8, 13, 15],
+        [0,  0,  0,  0,  0,  0,  0,  0,  0,  5],
+        [0,  0,  0,  0,  0,  0,  0,  0,  0,  1],
+        [0,  0,  0,  0,  0,  0,  0,  0,  0,  0]
+        ]
+
+    graph = Graph(matrix)
+
+    new_graph = dijkstragraph(graph, 0)
+    new_graph.df_print(0)           # 0 1 2 3 4 5 6 7 9 8 
+    new_graph.bf_print(0)           # 0 1 2 3 4 5 6 7 8 9
+    print(new_graph.weight(3, 6))   # 4
+    print(new_graph.weight(5, 8))   # -1
+
+</pre>
+</div>
+<br>
+<div>Submit your solution in CodeGrade as <strong>dijkstra.py</strong> including your graph class in <strong>graph.py</strong> (Assignment 9.1).</div>
+<br>
+<div>Hint: try to do the Dijkstra's algorithm and new graph construction separately. What other information can we get while running Dijkstra's algorithm?</div>
+</body>
+</html>

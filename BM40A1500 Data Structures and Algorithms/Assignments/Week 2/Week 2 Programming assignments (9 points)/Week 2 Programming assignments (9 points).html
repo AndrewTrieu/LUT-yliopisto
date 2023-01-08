@@ -1,0 +1,143 @@
+<!doctype html>
+<html>
+<head>
+    <title>Week 2 Programming assignments (9 points)</title>
+    <meta charset="utf-8">
+    
+</head>
+<body>
+<div>
+    <h4><strong> Assignment 2.1: Changes</strong> (3 points)</h4>
+</div>
+<p></p>
+<div> An array of \(n\) number of integers must be modified so that no two consecutive integers are equal. The new value can be chosen arbitrarily. What is the minimum number of required changes? </div>
+<p></p>
+<div> For Example array \([1, 1, 2, 2, 2]\) requires 2 changes. Changed array can be e.g. \([1, <strong><span class="" style="color: rgb(51, 51, 51);">3</span></strong>, 2, <strong><span class="" style="color: rgb(51, 51, 51);">3</span></strong>, 2]\) (the changed integers are in bold).
+</div>
+<p></p>
+<div> Create the following function in Python: </div>
+<ul>
+    <ul>
+        <li> <strong>changes(A: list)</strong>: returns the minimum number of required changes
+        </li>
+    </ul>
+</ul>
+<div> Limits: </div>
+<ul>
+    <ul>
+        <li> \(1 \leq n \leq 10^6\) </li>
+        <li> each integer is between \(1...10^3\) </li>
+    </ul>
+</ul>
+<div><strong> Target: Algorithm performs in \(\Theta(n)\) time. </strong></div>
+<p></p>
+<div>A code template with an example program: </div>
+<p></p>
+<div style="border:2px solid black">
+  <pre>def changes(A):
+    # TODO
+
+
+if __name__ == "__main__":
+    print(changes([1, 1, 2, 2, 2]))     # 2
+    print(changes([1, 2, 3, 4, 5]))     # 0
+    print(changes([1, 1, 1, 1, 1]))     # 2  </pre>
+</div>
+<p></p>
+<div><br> </div>
+<div>Submit your solution in CodeGrade as <strong>changes.py</strong>. <br></div>
+<div><br></div>
+<p></p>
+<p></p>
+
+
+<div>
+    <h4><strong> Assignment 2.2: Bit Pairs</strong> (3 points)</h4>
+</div>
+<p></p>
+<div> We are given a bit string which each character is either 0 or 1. Count the sum of each distance of bit pairs where both bits are 1. </div>
+<p></p>
+<div> For example a bit string 100101 has following distances </div>
+<ul>
+    <ul>
+        <li> <strong>1</strong>00<strong>1</strong>01 (3) </li>
+        <li> <strong>1</strong>0010<strong>1</strong> (5) </li>
+        <li> 100<strong>1</strong>0<strong>1</strong> (2) </li>
+    </ul>
+</ul>
+<div> Therefore the sum of distances is \(3+5+2 = 10\). </div>
+<p></p>
+<div> Create the following function in Python:</div>
+<ul>
+    <ul>
+        <li><strong>pairs(s: str)</strong>: returns the sum of distances </li>
+    </ul>
+</ul>
+<div> Limits: the maximum length of the bit string is \(10^5\) </div>
+<p></p>
+<div><strong> Target: Algorithm performs in \(\Theta(n)\) time. </strong></div>
+<p></p>
+<div>A code template with an example program: </div>
+<p></p>
+<div style="border:2px solid black">
+  <pre>def pairs(s):
+    # TODO
+
+
+if __name__ == "__main__":
+    print(pairs("100101")) # 10
+    print(pairs("101")) # 2
+    print(pairs("100100111001")) # 71
+</pre>
+</div>
+<p></p>
+<div> Submit your solution solution in CodeGrade as <strong>bitpairs.py</strong>.</div>
+<div><br></div>
+<p></p>
+<p></p>
+
+
+<div>
+    <h4><strong> Assignment 2.3: Split Lists&nbsp;</strong>(3 points)</h4>
+</div>
+<p></p>
+<div>An array of \(n\) number of integers must be split in two sub arrays so that every integer of left sub array are smaller than every integer of right sub array. In how many points the array can be split in half? </div>
+<p></p>
+<div> For example array \([2, 1, 2, 5, 7, 6, 9]\) can be split in 3 ways: </div>
+<ol>
+    <li>\([2, 1, 2]\) and \([5, 7, 6, 9]\)</li>
+    <li>\([2, 1, 2, 5]\) and \([7, 6, 9]\)</li>
+    <li>\([2, 1, 2, 5, 7, 6]\) and \([9]\)</li>
+</ol>
+<div> Create following function(s) in Python:</div>
+<ul>
+    <ul>
+        <li><strong>split(A: list)</strong>: returns the number of possible splits </li>
+    </ul>
+</ul>
+<div> Limits: </div>
+<ul>
+    <ul>
+        <li>\(1 \leq n \leq 10^5\)<br></li>
+        <li> each integer is between \(1...10^3\) </li>
+    </ul>
+</ul>
+<div><strong> Target: Algorithm performs in \(\Theta(n)\) time. </strong></div>
+<p></p>
+<div>A code template with an example program: </div>
+<p></p>
+<div style="border:2px solid black">
+  <pre>def split(T):
+    # TODO
+
+
+if __name__ == "__main__":
+    print(count([1,2,3,4,5])) # 4
+    print(count([5,4,3,2,1])) # 0
+    print(count([2,1,2,5,7,6,9])) # 3
+    print(count([1,2,3,1])) # 0</pre>
+</div>
+<p></p>
+<div> Submit your solution solution in CodeGrade as <strong>split.py</strong>.</div>
+</body>
+</html>

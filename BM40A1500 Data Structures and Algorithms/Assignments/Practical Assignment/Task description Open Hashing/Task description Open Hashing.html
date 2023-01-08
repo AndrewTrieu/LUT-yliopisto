@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+<head>
+    <title>Task description: Open Hashing</title>
+    <meta charset="utf-8">
+    
+</head>
+<body>
+<div>
+    <h4>1. Implementing the Hash Table</h4>
+</div>
+<div>Create your own hash table that uses open hashing in Python. Each slot of the hash table contains a linked
+    structure where the data (keys) are stored. The hash system must include search, insert, and delete operations. The hash table must be able to store both integer (<em>int</em>)
+    and string (<em>str</em>) values. That means that also all the operations/methods (search, insert, and delete) need to work with both data types. You can decide or design the hash function by yourself.<br></div>
+<br>
+<div>Consider following things when you are creating the hash table:</div>
+<ul>
+    <ul>
+        <li>The size of the hash table is <strong>fixed</strong>. That means that after initializing the size of the table must stay the same.</li><li>You must implement the linked structure where the data is stored by yourself.<br></li><li>Choose your hashing function wisely because it must work efficiently with very large hash tables.
+            A Good start is the string folding. Be as creative you want but be prepared to explain how it works!</li>
+        <li>Document your code!</li>
+    </ul>
+</ul>
+<div><div>Save the code of your new data structure as <strong>hash_1.py</strong></div><br></div><div>Answer to the following essay questions:</div>
+<ol>
+    <li>Present the structure of your hash table.</li>
+    <li>What hashing function did you choose and why?</li>
+    <li>What (including required) methods your hash table has and explain briefly how do they work?</li>
+</ol><br>
+
+
+<div>
+    <h4>2. Testing and Analyzing the Hash Table</h4>
+</div>
+<div>Create a Python program: <strong>hash_2.py</strong>:</div>
+<ol>
+    <li>Create a new hash table of size \(3\). Add items <strong>12, 'hashtable', 1234, 4328989, 'BM40A1500', -12456, 'aaaabbbbcccc'</strong>
+        to the hash table. Present the structure of the hash table each time when a new value is added.</li>
+    <li>Now try to find values <strong>-12456, 'hashtable', 1235</strong>. Print out the results.</li>
+    <li>Remove values <strong>'BM40A1500', 1234, 'aaaabbbbcccc'</strong>. Present the final structure of the hash table.</li>
+</ol>
+<div>Answer to the following essay questions:</div>
+<ol>
+    <li>What is the running time of adding a new value in your hash table and why?</li>
+    <li>What is the running time of finding a new value in your hash table and why?</li>
+    <li>What is the running time of removing a new value in your hash table and why?</li>
+</ol>
+<div>Use \(\Theta\) notation. Consider what factors influence the running time of the methods.</div>
+<br>
+<br>
+
+
+<div>
+    <h4>3. The Pressure Test</h4>
+</div>
+<div>Let's put the hash table in a real use. The text file <a href="data/words_alpha.txt"><em>words_alpha.txt</em></a> (source: https://github.com/dwyl/english-words/)
+    contains \(370105\) English (and not so English) words. The text file
+    <a href="data/kaikkisanat.txt"><em>kaikkisanat.txt</em></a> (source: https://github.com/hugovk/everyfinnishword) contains \(93086\) Finnish words. Your task is to find all words from <em>kaikkisanat.txt</em> that are also in <em>words_alpha.txt</em> (exact matches).
+</div>
+<br>
+<div>Create a new Python file <strong>hash_3_1.py</strong>:</div>
+<ol>
+    <li>Create a new hash table of size \(10000\).</li>
+    <li>Read all words from <em>words_alpha.txt</em> and store them to your hash table.</li>
+    <li>While reading words from <em>kaikkisanat.txt</em> check how many of them can you find from the hash table
+        and print out the final result.</li>
+</ol>
+<div>Measure the runtime for each step. Tabulate the results
+    as follows:
+</div>
+<br>
+
+
+
+<table frame="grey" cellspacing="1" cellpadding="0" border="1">
+    <tbody>
+        <tr>
+            <th>Process</th>
+            <th>Time (s)</th>
+        </tr>
+        <tr>
+            <td>Initializing the hash table</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Adding the words</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Finding the common words</td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>
+<br>
+<div>How does your hash table stand against a linear array? Repeat the previous test,
+    but this time store the words from <em>words_alpha.txt</em> to a <em>list</em> instead of the hash table. Save your code as <strong>hash_3_2.py</strong><br></div>
+
+<div><br></div><div>Answer to the following essay questions:</div>
+<ol>
+    <li>Which data structure was faster in adding the words from the file and why?</li>
+    <li>In which data structure was the search faster and why?</li>
+    <li>Are you able to make the test program in <strong>hash_3_1.py</strong> faster (even slight improvements)?
+        <ul>
+            <li>Try to change the size of the hash table.</li>
+            <li>How well is the data distributed in the hash table?</li>
+        </ul>
+    </li>
+</ol>
+<br>
+<p>Provide your answers to all the essay questions in a single PDF file. You can use the template below:</p><a href="data/PA_essay_template.odt?time=1665307225135">
+</a><p><a href="data/PA_essay_template.odt?time=1665398460962">PA_essay_template.odt</a><br></p>
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!doctype html>
+<html>
+<head>
+    <title>Week 6 Programming Assignments (8 points)</title>
+    <meta charset="utf-8">
+    
+</head>
+<body>
+<div>
+    <h4><strong>Assignment 6.1: The AVL Tree</strong><span>&nbsp;(5 points)</span></h4>
+</div>
+
+<div>The following Python code implements the AVL tree which can do single and double rotations to the right. Finalize the class <strong>AVL</strong> by creating following methods:</div>
+<ul>
+    <ul>
+        <li><strong>left_rotation(root: AVLNode)</strong>: symmetrical to
+            <strong>right_rotation</strong>
+        </li>
+        <li><strong>right_left_rotation(root: AVLNode)</strong>: symmetrical to <strong>left_right_rotation</strong></li>
+        <li><strong>preorder()</strong>: enumerates the keys and their balance values in preorder</li>
+        <ul>
+            <li>the format: 'key1:balance1 key2:balance2 key3:balance3'</li>
+        </ul>
+    </ul>
+</ul>
+<div>Finally, finalize the method <strong>insert_help</strong> so that it functions properly.</div>
+<p></p>
+<div><span>
+        <div>Submit your solution in CodeGrade as <strong>AVL.py</strong>.</div>
+    </span><br></div>
+<div>An example program: </div>
+<p></p>
+<div style="border:2px solid black">
+    <pre>if __name__ == "__main__":
+    Tree = AVL()
+    for key in [9, 10, 11, 3, 2, 6, 4, 7, 5, 1]:
+        Tree.insert(key)
+    Tree.preorder()     # 9;-1 4;0 2;0 1;0 3;0 6;0 5;0 7;0 10;1 11;0
+</pre>
+</div>
+<div><br></div>
+<div>A code template for the AVL tree: </div>
+<p></p>
+<div style="border:2px solid black">
+    <pre>class AVLNode:
+    # Constructor for new node
+    def __init__(self, key: int):
+        self.key = key
+        self.left = None
+        self.right = None
+        self.balance = 0
+    
+
+class AVL:
+
+    # Constructor for new AVL
+    def __init__(self):
+        self.root = None
+        self.is_balanced = True
+
+
+    # Inserts a new key to the search tree
+    def insert(self, key):
+        self.root = self.insert_help(self.root, key)
+
+    # Help function for insert
+    def insert_help(self, root, key):
+        if not root:
+            root = AVLNode(key)
+            self.is_balanced = False
+        elif key &lt; root.key:
+            root.left = self.insert_help(root.left, key)
+            if not self.is_balanced:                           # Check for possible rotations
+                if root.balance &gt;= 0:                       # No Rotations needed, update balance variables
+                    self.is_balanced = root.balance == 1
+                    root.balance -= 1
+                else:                                       # Rotation(s) needed
+                    if root.left.balance == -1:
+                        root = self.right_rotation(root)    # Single rotation
+                    else:
+                        root = self.left_right_rotation(root)   # Double rotation
+                    self.is_balanced = True
+        elif key &gt; root.key:
+            root.right = self.insert_help(root.right, key)
+
+            # TODO
+            
+        return root
+
+
+    # Single rotation: right rotation around root
+    def right_rotation(self, root):
+        child = root.left                   # Set variable for child node
+        root.left = child.right             # Rotate
+        child.right = root
+        child.balance = root.balance = 0    # Fix balance variables
+        return child
+
+
+    # Single rotation: left rotation around root 
+    def left_rotation(self, root):
+        # TODO
+
+
+    # Double rotation: left rotation around child node followed by right rotation around root
+    def left_right_rotation(self, root):
+        child = root.left
+        grandchild = child.right            # Set variables for child node and grandchild node
+        child.right = grandchild.left       # Rotate
+        grandchild.left = child
+        root.left = grandchild.right
+        grandchild.right = root
+        root.balance = child.balance = 0    # Fix balance variables
+        if grandchild.balance == -1:
+            root.balance = 1 
+        elif grandchild.balance == 1:
+            child.balance = -1
+        grandchild.balance = 0
+        return grandchild
+
+
+    # Double rotation: right rotation around child node followed by left rotation around root
+    def right_left_rotation(self, root):
+        # TODO
+</pre>
+</div>
+<br>
+<br>
+
+<div>
+    <h4><strong>Assignment 6.2: The Min Heap</strong>&nbsp;(3 points)</h4>
+</div>
+<div>Implement the min heap structure that stores positive integers in Python. Create class <strong>MinHeap</strong> which has following functions:</div>
+<ul>
+    <ul>
+        <li><strong>push(key: int)</strong>: inserts a new key to the heap while maintaining the min heap property.<br></li>
+        <li><strong>pop(): </strong>removes the smallest key from the heap and returns its value. </li>
+        <li><strong>print()</strong>: prints the heap in breadth-first order<ul>
+                <li>the format: key values separated by spaces (e.g. 1 2 3 4).<br></li>
+            </ul>
+        </li>
+
+    </ul>
+</ul>
+<div>Make sure that the heap always maintains the min heap property. The best practice is to store the heap structure in a list where a key in index \(i\)</div>
+<ul>
+    <ul>
+        <li>has a left child at index \(2i + 1\)</li>
+        <li>has a right child at index \(2i + 2\)</li>
+        <li>has its parent at index \(\lfloor \frac{i-1}{2} \rfloor\) (\(\lfloor \ldots \rfloor\) rounds down to the nearest integer)<br></li>
+    </ul>
+</ul>
+<div>A code template an example program: </div>
+<p></p>
+<div style="border:2px solid black">
+    <pre>class MinHeap:
+    # TODO
+
+
+if __name__ == "__main__":
+    items = [4, 8, 6, 5, 1, 2, 3]
+    heap = MinHeap()
+    [heap.push(key) for key in items]
+    heap.print()        # 1 4 2 8 5 6 3 
+    print(heap.pop())   # 1
+    heap.print()        # 2 4 3 8 5 6 
+</pre>
+</div>
+<p></p>
+<div>Submit your solution in CodeGrade as <strong>minheap.py</strong>.</div>
+</body>
+</html>

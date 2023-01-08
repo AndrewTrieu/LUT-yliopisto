@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+<head>
+    <title>Week 10 Programming Assignments (8 points)</title>
+    <meta charset="utf-8">
+    
+</head>
+<body>
+<div>
+    <p><strong><span class="" style="color: rgb(239, 69, 64);">Note: both assignments for this week use the graph class implemented in Programming Assignment 9.1.</span></strong></p><h4><strong>Assignment 10.1: Floyd's Algorithm</strong> (4 points)</h4>
+</div>
+<div>To find the shortest distance between all pair of vertices the best solution is to use Floyd's algorithm.</div>
+<br>
+<div>Create a function <strong>floyd(graph: Graph)</strong> in Python. The function takes a Graph object as an input value and returns a \(V \times V\) matrix
+    (\(V\) sized list of \(V\) sized lists) containing distances between all vertex pairs (\(v_i,v_j\)). The function must work for both directed and undirected graphs.</div>
+<br>
+<div>A code template with an example program for the directed graph below:</div>
+<p></p>
+<!-- Add other path in Moodle! -->
+<img src="data/examplegraph.png" alt="Example Graph" class="img-responsive atto_image_button_text-bottom" width="306" height="239">
+<p></p>
+<div style="border:2px solid black">
+<pre>from graph import Graph
+
+
+def floyd(graph):
+    # TODO
+    
+
+if __name__ == "__main__":
+
+    matrix = [
+    #    0  1  2  3  4  5
+        [0, 0, 7, 0, 9, 0], # 0
+        [0, 0, 0, 0, 0, 0], # 1
+        [0, 5, 0, 1, 0, 2], # 2
+        [6, 0, 0, 0, 0, 2], # 3
+        [0, 0, 0, 0, 0, 1], # 4
+        [0, 6, 0, 0, 0, 0]  # 5   
+    ]
+    graph = Graph(matrix)
+    D = floyd(graph)
+    for i in range(6):
+        for j in range(6):
+            print(f"{D[i][j]:2d}", end=" ")
+        print()
+    #  0 12  7  8  9  9 
+    #  0  0  0  0  0  0 
+    #  7  5  0  1 16  2 
+    #  6  8 13  0 15  2 
+    #  0  7  0  0  0  1 
+    #  0  6  0  0  0  0 
+</pre>
+</div>
+<p></p>
+<div>Submit your solution in CodeGrade as <strong>floyd.py</strong> including your graph class in <strong>graph.py</strong>.</div>
+<br>
+<br>
+
+
+<div>
+    <h4><strong>Assignment 10.2: Kruskal's Algorithm</strong> (4 points)</h4>
+</div>
+<div>Last week we constructed a graph with the shortest paths starting from a given vertex using Dijkstra's algorithm. Although the shortest -path graph might also be a minimal cost spanning tree (MCST), this is not guaranteed. Therefore, it is better to use an algorithm designed to produce MCST. Here we implement Kruskal's algorithm.</div>
+<br>
+<div>Create a function <strong>kruskal(graph: Graph)</strong> in Python. The function takes a Graph object as an input value and
+    returns a new Graph object that has only the edges that constructs the minimum spanning tree computed by Kruskal's algorithm. The created graph is undirected and
+    you can assume that the original graph is undirected too.</div>
+<br>
+<div>For example the on the left we have the original undirected graph and on the right we have a graph that the function produces.</div>
+<br>
+<p><img src="data/kruskal.png" alt="Example Graph" class="img-responsive atto_image_button_text-bottom" width="647" height="233"><br>
+</p><br>
+<div></div>A code template with an example program for the graph above:<br><br>
+<div style="border:2px solid black">
+<pre>from graph import Graph
+
+def kruskal(graph):
+    # TODO
+    
+ 
+if __name__ == "__main__":
+
+    matrix = [
+    #    0  1  2  3  4  5
+        [0, 0, 7, 6, 9, 0], # 0
+        [0, 0, 5, 0, 0, 6], # 1
+        [7, 5, 0, 1, 0, 2], # 2
+        [6, 0, 1, 0, 0, 2], # 3
+        [9, 0, 0, 0, 0, 1], # 4
+        [0, 6, 2, 2, 1, 0]  # 5    
+    ]
+    graph = Graph(matrix)
+    graph.bf_print(0)   # 0 2 3 4 1 5
+    mst = kruskal(graph)
+    mst.bf_print(0)     # 0 3 2 1 5 4
+</pre>
+</div>
+<br>
+<div>Submit your solution in CodeGrade as <strong>kruskal.py</strong> including your graph class in <strong>graph.py</strong>.</div>
+<br>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<head>
+    <title>Week 3: Programming Assignments (8 points)</title>
+    <meta charset="utf-8">
+    
+</head>
+<body>
+<div>
+    <h4><strong>Assignment 3.1: Linked List </strong>(5 points)<strong><br></strong></h4>
+</div>
+<div>Implement the linked list data structure in Python. Create a class <strong>Node</strong> which stores the data and link to another Node class. Create also the class <strong>LinkedList</strong> which maintains the linked list created by Node classes and has the following methods:
+</div>
+<ul>
+    <ul>
+        <li><strong>append(data: object)</strong>: inserts a new Node containing the data to the end of the list.<br></li>
+        <li><strong>insert(data: object, index: int)</strong>: inserts a new Node containing the data to the position indicated by the index (the index of the first node is 0).</li>
+        <li><strong>delete(index: int)</strong>: deletes a node from the position indicated by the index.</li>
+        <li><strong>index(data: object)</strong>: search the Node containing the data and returns its index. Returns \(-1\) if not found.</li>
+        <li><strong>print()</strong>: prints the content of linked list (format: node1 -&gt; node2 -&gt; node3).</li>
+    </ul>
+</ul>
+<div>A code template with an example program: </div>
+<p></p>
+<div style="border:2px solid black">
+<pre>class Node:
+    # TODO
+    
+
+class LinkedList:
+    # TODO
+
+
+if __name__ == "__main__":
+    L = LinkedList()
+    L.append(1)
+    L.append(3)
+    L.print()           # 1 -&gt; 3
+    L.insert(10, 1)
+    L.insert(15, 0)
+    L.print()           # 15 -&gt; 1 -&gt; 10 -&gt; 3
+    print(L.index(1))   # 1
+    L.delete(0)
+    L.print()           # 1 -&gt; 10 -&gt; 3
+</pre>
+</div>
+<p></p>
+<div>Submit your solution in CodeGrade as <strong>linked.py</strong>.</div>
+<div><br><br></div>
+
+
+<div>
+    <h4><strong>Assignment 3.2: Binary Search </strong>(3 points)</h4>
+</div>
+<div>Implement the binary search algorithm in Python. Create a function <strong>search(A: list, item: int)</strong> which returns the index of the item in the list. If the item is not found the function returns \(-1\). You can assume that the list contains only
+    integers and it is always sorted.</div>
+<div><br>Limits:</div>
+<ul>
+    <ul>
+        <li>Integers in the list are between \(1...10^6\)</li>
+        <li>The maximum length of the list is \(10^6\)</li>
+    </ul>
+</ul>
+<div>Target: the algorithm performs in \(\Theta(\log(n))\) time.</div>
+<p></p>
+<div>A code template with an example program: </div>
+<p></p>
+<div style="border:2px solid black">
+<pre>def search(A: list, item: int):
+    # TODO
+
+
+if __name__ == "__main__":
+    A = [1, 2, 3, 6, 10, 15, 22, 27, 30, 31]
+    print(search(A, 6))     # 3
+    print(search(A, 7))     # -1
+    print(search(A, 30))    # 8
+</pre>
+</div>
+<div><br></div><div>Submit your solution in CodeGrade as <strong>binarysearch.py</strong>.</div>
+</body>
+</html>

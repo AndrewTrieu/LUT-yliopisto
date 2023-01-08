@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+<head>
+    <title>Week 5: Programming Assignments (9 points)</title>
+    <meta charset="utf-8">
+    
+</head>
+<body>
+<div>
+    <h4><strong>Assignment 5.1: Binary Search Tree</strong> <span>(4 points)</span></h4>
+</div>
+
+<div>Implement a binary seach tree in Python. The tree stores integers (keys) only.
+    <p></p>
+    <div>Create following classes:
+        <ul>
+            <ul>
+                <li><strong>Node</strong> which stores the integer value (key) and links to its left and right child</li>
+                <li><strong>BST</strong> maintains the binary search tree built with Node classes. </li>
+            </ul>
+        </ul>
+    </div>
+
+
+
+    <div>Create following methods for class BTS:</div>
+    <ul>
+        <ul>
+            <li><strong>insert(key: int)</strong>: inserts a new key to the search tree, no duplicates.</li>
+            <li><strong>search(key: int)</strong>: searches the key from the search tree and returns boolean True if the value is found, False otherwise.</li>
+            <li><strong>preorder()</strong>: prints the content of the search tree in preorder. Implement the method using recursion.</li>
+        </ul>
+    </ul>
+    <p></p>
+<div>A code template with an example program: </div>
+<p></p>
+<div style="border:2px solid black">
+    <pre>class Node:
+    # TODO
+ 
+
+class BST:
+    # TODO
+    
+if __name__ == "__main__":
+    Tree = BST()
+    keys = [5, 9, 1, 3, 7, 4, 6, 2]
+    for key in keys:
+        Tree.insert(key)
+
+    Tree.preorder()         # 5 1 3 2 4 9 7 6
+    print(Tree.search(6))   # True
+    print(Tree.search(8))   # False
+</pre>
+  </div>
+    <p></p>
+    <div>Submit your solution in CodeGrade as <strong>bintree.py</strong>.</div>
+    <br>
+    <br>
+
+
+    <div>
+        <h4><strong>Assignment 5.2: Removing a Node</strong> (3 points)</h4>
+    </div>
+
+    <div>Add new method <strong>remove(key: int)</strong> to the BST class. The function removes the node which has the given key value while maintaining the &nbsp;binary search tree property.</div>
+    <p></p>
+<div>An example program: </div>
+<p></p>
+<div style="border:2px solid black">
+    <pre>if __name__ == "__main__":
+    Tree = BST()
+    keys = [5, 9, 1, 3, 7, 4, 6, 2]
+    for key in keys:
+        Tree.insert(key)
+
+    Tree.preorder()     # 5 1 3 2 4 9 7 6 
+    Tree.remove(1)
+    Tree.preorder()     # 5 3 2 4 9 7 6 
+    Tree.remove(9)
+    Tree.preorder()     # 5 3 2 4 7 6
+    Tree.remove(3)
+    Tree.preorder()     # 5 2 4 7 6
+</pre>
+  </div>
+    <p></p>
+    <div>Submit your expanded version of <strong>bintree.py</strong> in CodeGrade.</div>
+    <br>
+    <br>
+
+
+    <div>
+        <h4><strong>Assignment 5.3: Breadth-First Enumeration </strong>(2 points)</h4>
+    </div>
+
+    <div>Breadth-First enumeration presents the nodes of the search tree level by level (or depth) unlike preorder
+        enumeration which presents the left subtree completely before the right subtree.</div>
+    <div><br></div>
+    <div><img src="data/Animated_BFS.gif" alt="Breadth-first enumeration for a binary tree." width="187" height="175" class="img-fluid atto_image_button_text-bottom">&nbsp;</div>
+    <div><strong>Figure 1</strong><strong>:</strong> Breadth-First enumeration for a binary tree. Black: explored, grey: queued to be explored later on&nbsp;(source: <em>wikipedia.org</em>).&nbsp;</div>
+    <p></p>
+    <div>Add a new method <strong>breadthfirst()</strong> to the BST class which prints out the content of the search tree in breadth-first order.</div>
+    <p></p>
+<div>An example program: </div>
+<p></p>
+<div style="border:2px solid black">
+    <pre>if __name__ == "__main__":
+    Tree = BST()
+    keys = [5, 9, 1, 3, 7, 4, 6, 2]
+    for key in keys:
+        Tree.insert(key)
+
+    Tree.preorder()         # 5 1 3 2 4 9 7 6
+    Tree.breadthfirst()     # 5 1 9 3 7 2 4 6
+</pre>
+  </div>
+    <p></p>
+    <div>Submit your expanded version of <strong>bintree.py</strong> in CodeGrade.</div>
+</div>
+</body>
+</html>
