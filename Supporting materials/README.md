@@ -16,9 +16,21 @@
 
 <https://web.stanford.edu/class/cs103/tools/truth-table-tool/>
 
+## Visualising data structures and algorithms through animation
+
+<https://visualgo.net/en>
+
+## Algorithm visualizer
+
+<https://algorithm-visualizer.org/>
+
 ## Tools for Learning Artificial Intelligence
 
 <http://www.aispace.org/index.shtml>
+
+## Coding assistant
+
+<https://github.com/features/copilot>
 
 ## Books
 
