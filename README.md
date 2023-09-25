@@ -9,6 +9,10 @@ This repository contains the content of the courses I took during my studies at 
 - The solutions provided are not guaranteed to be correct or complete, use them at your own risk.
 - The solutions provided are solely my own work.
 
+## How did I figure out xxx?
+
+A lot of time and effort was spent on researching and experimenting. Check out the folder _Supporting materials_ for some tools I used during my studies.
+
 ## Contact
 
 If you have any questions or comments, feel free to reach out to me at andrewtrieu.2003@gmail.com.
