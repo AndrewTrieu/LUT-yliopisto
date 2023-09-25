@@ -19,3 +19,7 @@
 ## Tools for Learning Artificial Intelligence
 
 <http://www.aispace.org/index.shtml>
+
+## Books
+
+You can find solution manuals for the textbooks from the internet, or send me an email.
