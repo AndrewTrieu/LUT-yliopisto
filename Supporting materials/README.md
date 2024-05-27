@@ -32,6 +32,10 @@
 
 <https://github.com/features/copilot>
 
+## Solutions for some exercises from books
+
+<https://github.com/ivfranco/notes>
+
 ## Books
 
 You can find solution manuals for the textbooks from the internet, or send me an email.
