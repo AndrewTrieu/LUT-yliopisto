@@ -36,6 +36,14 @@
 
 <https://github.com/ivfranco/notes>
 
+## Diagram drawing tool - Draw.io
+
+<https://app.diagrams.net/>
+
+## Note taking tool - Obsidian
+
+<https://obsidian.md/>
+
 ## Books
 
 You can find solution manuals for the textbooks from the internet, or send me an email.
