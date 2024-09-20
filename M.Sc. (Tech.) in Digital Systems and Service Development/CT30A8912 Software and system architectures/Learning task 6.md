@@ -1,0 +1,12 @@
+[[Software and system architectures]]
+
+1. **Define the dimensions integration and standardisation. How do they relate to the operating model of an enterprise?**
+	
+	Standardisation in an enterprise's operating model refers to making business processes and IT systems consistent across different units, ensuring tasks are carried out similarly regardless of location or executor. This boosts efficiency but may limit innovation and require replacement of existing systems, which can be costly and politically difficult. Integration, on the other hand, involves connecting organisational efforts through shared data, improving coordination and customer service. However, achieving integration demands standard data definitions, agreements, and understanding, making it a complex and costly process. Both dimensions are crucial for optimising operations but come with their own challenges.
+	
+2. **What kind of things are achieved through EA maturity?**
+	
+	According to Ross et al. (2006), enterprise architecture (EA) maturity encompasses four progressive stages: Business Silos, Standardised Technology, Optimised Core, and Business Modularity. In the initial stage of Business Silos, organisations focus on addressing local business needs, resulting in fragmented IT solutions and high operating costs. Advancing to the Standardised Technology stage, companies consolidate IT investments and establish enterprise-wide standards, leading to reduced complexity and costs in managing technology infrastructure. Moving to the Optimised Core stage, organisations prioritise data integration and centralise IT governance, facilitating strategic alignment between IT and business objectives. Finally, in the Business Modularity stage, the emphasis shifts towards achieving strategic agility through modular and reusable IT components, fostering innovation and scalability across the organisation. EA maturity enables organisations to optimise operational efficiency, enhance strategic agility, and reduce IT management costs through progressive stages of organisational learning and IT alignment with business goals.
+
+***References***
+Ross, J.W., Weill, P. and Robertson, D. (2006). _Enterprise Architecture as Strategy: Creating a Foundation for Business Execution_. Boston, Massachusetts: Harvard Business Review Press.

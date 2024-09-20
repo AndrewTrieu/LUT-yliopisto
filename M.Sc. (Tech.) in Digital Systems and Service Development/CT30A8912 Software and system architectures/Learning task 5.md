@@ -1,0 +1,13 @@
+[[Software and system architectures]]
+
+1. **How can you use prototypes in the course project?**  
+	
+	Prototypes can be used to demonstrate the feasibility and functionality of the proposed system to various stakeholders. For examples, prototypes can shows preview of the user experience to citizens, showcasing how different recognition functions seamlessly integrate to offer secure and convenient identity management. It can also gives the development team insight into the technical aspects of the architecture through prototypes, enabling them to refine algorithms and optimise system performance. 
+	
+2. **Why is architecture design needed also in agile projects?**  
+	
+	In a agile software project, where the focus is on iterative development and adaptability, architecture design plays a crucial role. It provides a blueprint for the system's structure, ensuring that the software components work harmoniously together. This is important since as agile projects often involve frequent changes and additions, and without a solid architectural foundation, the system risks becoming fragmented and difficult to maintain. Additionally, architecture design aids in anticipating future needs and scalability, allowing the software to grow and evolve alongside the project's requirements. Furthermore, it promotes communication and collaboration among team members, as it serves as a common reference point for discussing and understanding the system's design.
+	
+3. **Do you think technical debt is a useful concept in software architecture? Why yes or no?**
+	
+	Technical debt is a useful concept in software architecture because it provides a guideline for trade-offs made during the development process. Intentional technical debt, such as when the design is intentionally complex to meet a tight deadline, allows teams to prioritise time-to-market over perfection. This strategic decision acknowledges that addressing all aspects of software quality might delay the product's release, potentially causing loss of competitive advantage. On the other hand, unintentional technical debt arises from implementing non-optimal solutions or neglecting crucial software processes, like documentation, which can impede future development and maintenance. Recognising and managing these types of technical debt are essential for maintaining the software's health over time, particularly as systems age and technological advancements introduce new challenges. 
